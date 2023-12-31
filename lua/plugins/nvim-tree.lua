@@ -65,11 +65,7 @@ return {
                 enable = true,
                 -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
                 -- only relevant when `update_focused_file.enable` is true
-                update_cwd = true,
-            },
-            view = {
-                -- width of the window, can be either a number (columns) or a string in `%`
-                width = 30,
+                update_root = true,
             },
         })
 
