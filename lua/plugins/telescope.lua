@@ -33,6 +33,10 @@ return {
                         ["<C-s>"] = actions.select_horizontal,
                     },
                 },
+                file_ignore_patterns = {
+                    "node_modules/",
+                    ".git/",
+                },
                 vimgrep_arguments = {
                     "rg",
                     "--hidden",
