@@ -6,6 +6,7 @@ return {
         -- open file expolorer in current directory
         { "<leader>e", ":NvimTreeToggle<cr>" },
     },
+    dependencies = "nvim-tree/nvim-web-devicons",
 
     config = function()
         -- keybinds
