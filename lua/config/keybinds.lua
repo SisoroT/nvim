@@ -59,10 +59,10 @@ map("n", "<Tab>", ":bnext<CR>")
 map("n", "<S-Tab>", ":bprevious<CR>")
 
 -- resize with alt+hjkl
-map("n", "<M-h>", ":vertical resize -2<CR>")
-map("n", "<M-j>", ":resize -2<CR>")
-map("n", "<M-k>", ":resize +2<CR>")
-map("n", "<M-l>", ":vertical resize +2<CR>")
+map("n", "<C-Left>", ":vertical resize -2<CR>")
+map("n", "<C-Down>", ":resize -2<CR>")
+map("n", "<C-Up>", ":resize +2<CR>")
+map("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- source shortcut
 map("n", "<C-s>", ":so%<CR>")
@@ -70,11 +70,8 @@ map("n", "<C-s>", ":so%<CR>")
 -- close a buffer
 map("n", "<leader>bd", ":bd<CR>")
 
--- sort into table
-map("v", "<leader>s", "!column --table<CR>")
-
 -- keybind to use find and replace
-map("n", "<S-s>", ":%s//gI<Left><Left><Left>")
+map("n", "<leader>s", ":%s//gI<Left><Left><Left>")
 
 -- move line up and down in normal and visual modes
 -- Reference: https://vim.fandom.com/wiki/Moving_lines_up_or_down
@@ -83,5 +80,5 @@ map("x", "<S-k>", ":move '<-2<CR>gv=gv")
 
 -- use operator pending mode to visually select the whole buffer
 -- e.g. dA = delete buffer ALL, yA = copy whole buffer ALL
-map("o", "A", ":<C-U>normal! mzggVG<CR>`z")
-map("x", "A", ":<C-U>normal! ggVG<CR>")
+map("o", "<M-a>", ":<C-U>normal! mzggVG<CR>`z")
+map("x", "<M-a>", ":<C-U>normal! ggVG<CR>")
