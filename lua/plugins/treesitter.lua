@@ -10,6 +10,8 @@ return {
 		"windwp/nvim-ts-autotag",
 		-- show context of current buffer contents
 		"nvim-treesitter/nvim-treesitter-context",
+		-- operations on inner and outer text objects
+		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 
 	config = function()
@@ -31,16 +33,8 @@ return {
 				"xml",
 				"yaml",
 			},
-			-- Install parsers synchronously (only applied to `ensure_installed`)
-			sync_install = false,
-			-- Automatically install missing parsers when entering buffer
-			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-			auto_install = true,
-			-- List of parsers to ignore installing (for "all")
-			ignore_install = {},
 			highlight = {
-				enable = true, -- false will disable the whole extension
-				additional_vim_regex_highlighting = false,
+				enable = true,
 			},
 			indent = {
 				enable = false,
@@ -50,6 +44,23 @@ return {
 			},
 			autotag = {
 				enable = true,
+			},
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true,
+
+					keymaps = {
+						["af"] = "@function.outer",
+						["if"] = "@function.inner",
+
+						["ac"] = "@class.outer",
+						["ic"] = "@class.inner",
+
+						["aa"] = "@parameter.outer",
+						["ia"] = "@parameter.inner",
+					},
+				},
 			},
 		})
 	end,
