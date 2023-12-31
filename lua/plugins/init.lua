@@ -19,7 +19,7 @@ return {
     },
 
     -- visualize git conflicts
-    { "akinsho/git-conflict.nvim",           version = "*", config = true },
+    { "akinsho/git-conflict.nvim", version = "*", config = true },
 
     -- sudo save
     {
@@ -43,7 +43,7 @@ return {
     },
 
     -- blankline for tabs
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",  opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     -- highlights colors behind hex, rgb, and names
     {

@@ -1,6 +1,6 @@
 local g = vim.g
 local function map(mode, keybind, command)
-	vim.keymap.set(mode, keybind, command, { noremap = true, silent = true })
+    vim.keymap.set(mode, keybind, command, { noremap = true, silent = true })
 end
 
 -- map leader key to space
