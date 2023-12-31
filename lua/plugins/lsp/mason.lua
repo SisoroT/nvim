@@ -1,6 +1,7 @@
 -- easier installation of packages for lsp, linters, and formatters
 return {
     "williamboman/mason.nvim",
+    cmd = "Mason",
     build = ":MasonUpdate",
 
     config = function()
