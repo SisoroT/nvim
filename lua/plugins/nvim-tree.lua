@@ -4,7 +4,7 @@ return {
     lazy = true,
     keys = {
         -- open file expolorer in current directory
-        { "<leader>e", ":NvimTreeToggle<cr>" },
+        { "<leader>e", ":NvimTreeToggle<cr>", silent = true },
     },
     dependencies = "nvim-tree/nvim-web-devicons",
 
