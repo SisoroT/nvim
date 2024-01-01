@@ -1,7 +1,6 @@
 -- better syntax highlighting
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufRead",
     build = ":TSUpdate",
     dependencies = {
         -- rainbow parens
