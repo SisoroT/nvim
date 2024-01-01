@@ -1,6 +1,8 @@
 -- easier installation of packages for lsp, linters, and formatters
 return {
     "williamboman/mason-lspconfig.nvim",
+    -- omnisharp go to definition fix
+    dependencies = "Hoffs/omnisharp-extended-lsp.nvim",
 
     config = function()
         local lspconfig = require("lspconfig")
@@ -57,6 +59,14 @@ return {
                         "--cross-file-rename",
                         "--offset-encoding=utf-16", -- fixes multiple encoding issue
                     },
+                })
+            end,
+            ["omnisharp"] = function()
+                lspconfig.omnisharp.setup({
+                    handlers = {
+                        ["textDocument/definition"] = require("omnisharp_extended").handler,
+                    },
+                    cmd = { "omnisharp", "--languageserver" },
                 })
             end,
             ["cssls"] = function()
