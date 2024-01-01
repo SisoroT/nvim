@@ -24,12 +24,16 @@ return {
     -- sudo save
     {
         "lambdalisue/suda.vim",
-        init = vim.api.nvim_create_user_command("W", "SudaWrite", {}),
+        cmd = "W",
+        config = function()
+            vim.api.nvim_create_user_command("W", "SudaWrite", {})
+        end,
     },
 
     -- kill bad habits :)
     {
         "m4xshen/hardtime.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
         config = true,
     },
 
