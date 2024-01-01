@@ -24,7 +24,7 @@ return {
     -- sudo save
     {
         "lambdalisue/suda.vim",
-        cmd = "W",
+        cmd = { "SudaWrite", "W" },
         config = function()
             vim.api.nvim_create_user_command("W", "SudaWrite", {})
         end,
