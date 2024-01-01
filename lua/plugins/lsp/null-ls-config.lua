@@ -28,8 +28,8 @@ return {
                 -- html only
                 diagnostics.tidy,
                 -- javascript only
-                diagnostics.eslint,
-                code_actions.eslint,
+                diagnostics.eslint_d,
+                code_actions.eslint_d,
 
                 -- c#
                 formatting.csharpier,
