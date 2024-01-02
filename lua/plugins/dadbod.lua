@@ -3,11 +3,11 @@ return {
     "tpope/vim-dadbod",
     keys = {
         -- toggle DBUI
-        { "<leader>du", ":DBUIToggle<CR>" },
+        { "<leader>bu", ":DBUIToggle<CR>" },
         -- run entire file
-        { "<leader>db", ":%DB<CR>" },
+        { "<leader>bb", ":%DB<CR>" },
         -- run selection
-        { "<leader>db", ":DB<CR>",        mode = "v" },
+        { "<leader>Db", ":DB<CR>", mode = "v" },
     },
     -- provides a ui for vim-dadbod
     dependencies = "kristijanhusak/vim-dadbod-ui",
