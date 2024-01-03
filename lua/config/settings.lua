@@ -3,6 +3,11 @@ local o = vim.o
 -- enable filetype
 vim.api.nvim_command("filetype plugin indent on")
 
+-- remove banner for netrw
+vim.g.netrw_banner = 0
+-- display relative line numbers in netrw
+vim.g.netrw_bufsettings = "nu rnu"
+
 -- enable true colors
 o.termguicolors = true
 
@@ -57,6 +62,9 @@ o.listchars = "trail:·,nbsp:◇,tab:| ,extends:▸,precedes:◂"
 
 -- wrap between next and previous lines when at the beginning/end of a line
 o.whichwrap = "<>[]hl,b,s"
+
+-- do not wrap lines
+o.wrap = false
 
 -- keep list of undo history
 o.undofile = true
