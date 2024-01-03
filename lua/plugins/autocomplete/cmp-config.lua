@@ -39,7 +39,6 @@ return {
         { "hrsh7th/cmp-path", event = "InsertEnter" },
         { "hrsh7th/cmp-calc", event = "InsertEnter" },
         { "saadparwaiz1/cmp_luasnip", event = "InsertEnter" },
-        { "kristijanhusak/vim-dadbod-completion", event = "InsertEnter" },
     },
 
     config = function()
@@ -75,7 +74,6 @@ return {
             -- You should specify your *installed* sources.
             sources = {
                 { name = "luasnip" },
-                { name = "vim-dadbod-completion" },
                 { name = "nvim_lsp" },
                 { name = "nvim_lua" },
                 { name = "buffer" },
