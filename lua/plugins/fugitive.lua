@@ -19,6 +19,7 @@ return {
             end
         end
 
-        vim.keymap.set("n", "<leader>g", toggleFugitiveGit)
+        vim.keymap.set("n", "<leader>gg", toggleFugitiveGit)
+        vim.keymap.set("n", "<leader>gc", ':Git commit -m ""<Left>')
     end,
 }
