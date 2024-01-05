@@ -20,6 +20,7 @@ return {
         end
 
         vim.keymap.set("n", "<leader>gg", toggleFugitiveGit)
+        vim.keymap.set("n", "<leader>gp", ":Git push<cr>")
         vim.keymap.set("n", "<leader>gc", ':Git commit -m ""<Left>')
     end,
 }
