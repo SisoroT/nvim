@@ -14,6 +14,8 @@ return {
         { "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
         -- search projects
         { "<leader>fp", "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>" },
+        { "<leader>fw" },
+        { "<leader>fW" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -22,6 +24,7 @@ return {
 
     config = function()
         local actions = require("telescope.actions")
+        local builtin = require("telescope.builtin")
 
         require("telescope").setup({
             defaults = {
@@ -53,6 +56,20 @@ return {
             extensions = {},
         })
 
+        -- keybinds
+        -- search for word under cursor
+        vim.keymap.set("n", "<leader>fw", function()
+            local word = vim.fn.expand("<cword>")
+            builtin.grep_string({ search = word })
+        end)
+
+        -- search for WORD under cursor
+        vim.keymap.set("n", "<leader>fW", function()
+            local word = vim.fn.expand("<cWORD>")
+            builtin.grep_string({ search = word })
+        end)
+
+        -- load extensions
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("projects")
     end,
