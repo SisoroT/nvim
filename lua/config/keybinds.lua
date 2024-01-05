@@ -12,7 +12,7 @@ map("n", "<leader>ov", ":vsplit | term<CR>")
 map("n", "<leader>oh", ":split | resize 13 | term<CR>")
 
 -- open netrw
-map("n", "<leader>pv", vim.cmd.Ex)
+map("n", "-", vim.cmd.Ex)
 
 -- rebind exit for terminal
 map("t", "<C-x>", "<C-\\><C-n>")
