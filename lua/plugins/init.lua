@@ -54,15 +54,4 @@ return {
         "NvChad/nvim-colorizer.lua",
         config = true,
     },
-
-    -- markdown preview
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = "markdown",
-        keys = { { "<leader>mp", ":MarkdownPreviewToggle<cr>" } },
-        build = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-    },
 }
