@@ -24,6 +24,7 @@ return {
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
         vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action)
         vim.keymap.set("n", "H", vim.lsp.buf.signature_help)
+        vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
         vim.keymap.set("n", "H", vim.diagnostic.open_float)
