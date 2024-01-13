@@ -1,8 +1,6 @@
--- github copilot
-
 return {
     "github/copilot.vim",
-    event = "BufRead",
+    event = "InsertEnter",
     keys = {
         -- accept full suggestion
         {
@@ -15,11 +13,11 @@ return {
             replace_keycodes = false,
         },
         -- dismiss suggestion
-        { "<M-d>", "<Plug>(copilot-dismiss)",  mode = "i" },
+        { "<M-d>", "<Plug>(copilot-dismiss)", mode = "i" },
         -- trigger suggest
-        { "<M-s>", "<Plug>(copilot-suggest)",  mode = "i" },
+        { "<M-s>", "<Plug>(copilot-suggest)", mode = "i" },
         -- next and prev suggestion
-        { "<M-l>", "<Plug>(copilot-next)",     mode = "i" },
+        { "<M-l>", "<Plug>(copilot-next)", mode = "i" },
         { "<M-h>", "<Plug>(copilot-previous)", mode = "i" },
     },
 
