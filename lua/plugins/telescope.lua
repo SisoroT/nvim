@@ -1,21 +1,16 @@
 -- fuzzy file finder
 return {
     "nvim-telescope/telescope.nvim",
-    lazy = true,
     keys = {
-        -- search files in current directory
-        { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
-        -- search all files in .config folder
-        {
-            "<leader>fc",
-            "<cmd>lua require('telescope.builtin').find_files({prompt_title = 'Search ~/.config/', cwd = vim.fn.expand('~/.config/')})<cr>",
-        },
-        -- search for string in cwd with ripgrep
-        { "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
-        -- search projects
-        { "<leader>fp", "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>" },
+        { "<leader>ff" },
+        { "<leader>fc" },
+        { "<leader>fg" },
         { "<leader>fw" },
         { "<leader>fW" },
+        { "<leader>vh" },
+        { "<leader>vk" },
+        { "gr" },
+        { "<leader>fp" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -56,7 +51,24 @@ return {
             extensions = {},
         })
 
-        -- keybinds
+        -- search files in current directory
+        vim.keymap.set("n", "<leader>ff", builtin.find_files)
+        -- search all files in .config folder
+        vim.keymap.set("n", "<leader>fc", function()
+            builtin.find_files({ prompt_title = "Search ~/.config/", cwd = vim.fn.expand("~/.config/") })
+        end)
+
+        -- rg strings in cwd
+        vim.keymap.set("n", "<leader>fg", builtin.live_grep)
+
+        -- search vim help docs
+        vim.keymap.set("n", "<leader>vh", builtin.help_tags)
+        -- search vim keymaps
+        vim.keymap.set("n", "<leader>vk", builtin.keymaps)
+
+        -- search lsp_references
+        vim.keymap.set("n", "gr", builtin.lsp_references)
+
         -- search for word under cursor
         vim.keymap.set("n", "<leader>fw", function()
             local word = vim.fn.expand("<cword>")
@@ -68,6 +80,9 @@ return {
             local word = vim.fn.expand("<cWORD>")
             builtin.grep_string({ search = word })
         end)
+
+        -- search projects
+        vim.keymap.set("n", "<leader>fp", require("telescope").extensions.projects.projects)
 
         -- load extensions
         require("telescope").load_extension("fzf")
