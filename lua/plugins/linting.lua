@@ -7,7 +7,7 @@ return {
 
         local function is_linter_installed(linter)
             if vim.fn.executable(linter) ~= 1 then
-                vim.notify(linter .. " is not installed.", vim.log.levels.WARN)
+                vim.notify(linter .. " can't be found.", vim.log.levels.WARN)
                 return false
             end
             return true
