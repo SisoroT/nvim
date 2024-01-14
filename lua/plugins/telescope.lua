@@ -1,6 +1,7 @@
 -- fuzzy file finder
 return {
     "nvim-telescope/telescope.nvim",
+    module = false,
     keys = {
         { "<leader>ff" },
         { "<leader>fc" },
@@ -10,7 +11,6 @@ return {
         { "<leader>vh" },
         { "<leader>vk" },
         { "gr" },
-        { "<leader>fp" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -81,11 +81,7 @@ return {
             builtin.grep_string({ search = word })
         end)
 
-        -- search projects
-        vim.keymap.set("n", "<leader>fp", require("telescope").extensions.projects.projects)
-
         -- load extensions
         require("telescope").load_extension("fzf")
-        require("telescope").load_extension("projects")
     end,
 }
