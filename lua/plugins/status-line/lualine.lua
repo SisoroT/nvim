@@ -162,7 +162,7 @@ return {
         -- file icon
         ins_left({
             "filetype",
-            colored = true,   -- Displays filetype icon in color if set to true
+            colored = true, -- Displays filetype icon in color if set to true
             icon_only = true, -- Display only an icon for filetype
             padding = { left = 1 },
         })
@@ -250,7 +250,7 @@ return {
                 local current_line = vim.fn.line(".")
                 local total_lines = vim.fn.line("$")
                 local default_chars =
-                { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+                    { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
                 local chars = default_chars
                 local index = 1
 

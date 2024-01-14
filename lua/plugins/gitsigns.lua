@@ -5,7 +5,7 @@ return {
 
     config = function()
         require("gitsigns").setup({
-            linehl = false,             -- Toggle with `:Gitsigns toggle_linehl`
+            linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
 
             current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
             current_line_blame_opts = {
