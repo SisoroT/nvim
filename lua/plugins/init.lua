@@ -3,7 +3,7 @@ return {
     -- better diagnostics
     {
         "folke/trouble.nvim",
-        keys = { { "<leader>t", "<cmd>TroubleToggle<cr>" } },
+        keys = { { "<leader>tt", "<cmd>TroubleToggle<cr>" } },
     },
 
     -- lsp signatures
