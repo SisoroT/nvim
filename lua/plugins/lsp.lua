@@ -15,6 +15,12 @@ return {
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+        -- change directory to root of project
+        local on_attach = function(client)
+            local root_dir = client.config.root_dir
+            vim.cmd("cd " .. root_dir)
+        end
+
         -- keybinds
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -28,6 +34,11 @@ return {
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
         vim.keymap.set("n", "H", vim.diagnostic.open_float)
+        vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder)
+        vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder)
+        vim.keymap.set("n", "<leader>wl", function()
+            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end)
 
         -- icons for mason
         require("mason").setup({
@@ -56,11 +67,14 @@ return {
 
             handlers = {
                 function(server_name)
-                    lspconfig[server_name].setup({})
+                    lspconfig[server_name].setup({
+                        on_attach = on_attach,
+                    })
                 end,
 
                 ["lua_ls"] = function()
                     lspconfig.lua_ls.setup({
+                        on_attach = on_attach,
                         settings = {
                             Lua = {
                                 diagnostics = {
@@ -72,11 +86,13 @@ return {
                 end,
                 ["cssls"] = function()
                     lspconfig.cssls.setup({
+                        on_attach = on_attach,
                         capabilities = capabilities,
                     })
                 end,
                 ["omnisharp"] = function()
                     lspconfig.omnisharp.setup({
+                        on_attach = on_attach,
                         handlers = {
                             ["textDocument/definition"] = require("omnisharp_extended").handler,
                         },
