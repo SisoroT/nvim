@@ -1,3 +1,4 @@
+-- manage git from vim
 return {
     "tpope/vim-fugitive",
     event = "BufWinEnter",

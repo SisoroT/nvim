@@ -1,4 +1,4 @@
--- manage projects
+-- manage project directories
 return {
     "ahmedkhalf/project.nvim",
     config = function()

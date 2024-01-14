@@ -1,4 +1,3 @@
--- github copilot
 return {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",

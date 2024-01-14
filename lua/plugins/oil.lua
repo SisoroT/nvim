@@ -1,3 +1,4 @@
+-- file explorer
 return {
     "stevearc/oil.nvim",
     keys = {

@@ -13,6 +13,5 @@ return {
         { "<M-n>", "<cmd>lua require('harpoon'):list():next()<cr>" },
     },
     dependencies = "nvim-lua/plenary.nvim",
-
     config = true,
 }
