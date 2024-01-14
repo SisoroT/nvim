@@ -16,7 +16,6 @@ vim.keymap.set("n", "<leader>z", "<cmd>Lazy<cr>")
 
 local plugins = {
     { import = "plugins" },
-    { import = "plugins.lsp" },
     { import = "plugins.autocomplete" },
     { import = "plugins.status-line" },
 }
