@@ -1,6 +1,7 @@
 -- top status line for buffers
 return {
     "akinsho/bufferline.nvim",
+    event = "BufEnter",
 
     config = function()
         require("bufferline").setup({

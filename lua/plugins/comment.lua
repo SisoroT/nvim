@@ -1,7 +1,6 @@
 -- quick commentary
 return {
     "numToStr/Comment.nvim",
-    lazy = false,
 
     opts = {
         ---LHS of toggle mappings in NORMAL mode
