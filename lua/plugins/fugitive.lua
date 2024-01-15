@@ -1,7 +1,7 @@
 -- manage git from vim
 return {
     "tpope/vim-fugitive",
-    event = "VeryLazy",
+    event = "BufWinEnter",
     config = function()
         local function showFugitiveGit()
             if vim.fn.FugitiveHead() ~= "" then
