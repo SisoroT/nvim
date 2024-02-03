@@ -8,6 +8,9 @@ vim.g.netrw_banner = 0
 -- display relative line numbers in netrw
 vim.g.netrw_bufsettings = "nu rnu"
 
+-- status line
+-- o.statusline = "%<%f %m%r%=%y%-14.( %l/%L | %c%) %P"
+
 -- enable true colors
 o.termguicolors = true
 
