@@ -104,5 +104,9 @@ return {
 
         -- open mason
         vim.keymap.set("n", "<leader>m", ":Mason<CR>")
+        -- toggle diagnostic
+        vim.keymap.set("n", "<leader>dd", function()
+            vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+        end, { silent = true, noremap = true })
     end,
 }
