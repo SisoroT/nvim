@@ -1,11 +1,11 @@
 -- plugins w/o configs
 return {
     -- better diagnostics
-    -- TODO: test
     {
         "folke/trouble.nvim",
-        event = "VimEnter",
-        keys = { { "<leader>tt", "<cmd>TroubleToggle<cr>" } },
+        opts = {},
+        cmd = "Trouble",
+        keys = { { "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>" } },
     },
 
     -- lsp signatures
