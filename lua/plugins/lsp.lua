@@ -61,7 +61,7 @@ return {
                 "lua_ls",
                 "omnisharp",
                 "pyright",
-                "tsserver",
+                "ts_ls",
                 "vimls",
             },
 
