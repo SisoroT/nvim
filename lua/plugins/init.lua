@@ -23,15 +23,6 @@ return {
         config = true,
     },
 
-    -- better movement
-    {
-        "ggandor/leap.nvim",
-        keys = { "s", "S" },
-        config = function()
-            require("leap").create_default_mappings()
-        end,
-    },
-
     -- better comments (adds TODO, FIXME, etc)
     { "folke/todo-comments.nvim", event = "VeryLazy", config = true },
 
