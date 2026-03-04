@@ -7,7 +7,6 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "black" },
-                cs = { "csharpier" },
                 sh = { "shfmt" },
 
                 -- prettier
@@ -19,6 +18,7 @@ return {
                 html = { "prettier" },
                 json = { "prettier" },
                 markdown = { "prettier" },
+                yaml = { "prettier" },
             },
             format_on_save = {
                 lsp_fallback = true,
