@@ -26,24 +26,6 @@ return {
             { text = "🔴", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
         )
 
-        -- c# config
-        dap.adapters.coreclr = {
-            type = "executable",
-            command = "netcoredbg",
-            args = { "--interpreter=vscode" },
-        }
-
-        dap.configurations.cs = {
-            {
-                type = "coreclr",
-                name = "launch - netcoredbg",
-                request = "launch",
-                program = function()
-                    return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
-                end,
-            },
-        }
-
         -- keymaps
         -- ui
         vim.keymap.set("n", "<leader>du", "<cmd>lua require('dapui').toggle()<cr>", { noremap = true })
