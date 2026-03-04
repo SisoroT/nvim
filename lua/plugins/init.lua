@@ -27,7 +27,7 @@ return {
     { "folke/todo-comments.nvim", event = "VeryLazy", config = true },
 
     -- highlights colors behind hex, rgb, and names
-    { "NvChad/nvim-colorizer.lua", event = "BufReadPre", config = true },
+    { "catgoose/nvim-colorizer.lua", event = "BufReadPre", opts = {} },
 
     -- blankline for tabs
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, event = "VeryLazy" },
