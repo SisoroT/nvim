@@ -40,19 +40,8 @@ map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
--- move the cursor left and right in insert mode without arrow keys
-map("i", "<C-h>", "<Left>")
-map("i", "<C-l>", "<Right>")
-
 -- alternative keybind for normal mode
 map({ "i", "v" }, "ii", "<Esc>")
-
--- move to the end of the line with space+0 in normal and visual mode
-map({ "n", "v" }, "<leader>0", "$")
-
--- move up and down 15 lines with ctrl+j or k
-map({ "n", "v" }, "<C-j>", "15j")
-map({ "n", "v" }, "<C-k>", "15k")
 
 -- clear highlighted search results
 map("n", "<leader>n", ":noh<CR>")
