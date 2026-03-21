@@ -22,14 +22,6 @@ return {
         config = true,
     },
 
-    -- kill bad habits :)
-    {
-        "m4xshen/hardtime.nvim",
-        event = "BufWinEnter",
-        dependencies = "nvim-lua/plenary.nvim",
-        config = true,
-    },
-
     -- better comments (adds TODO, FIXME, etc)
     { "folke/todo-comments.nvim", event = "VeryLazy", config = true },
 
