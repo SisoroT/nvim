@@ -1,6 +1,7 @@
 return {
     "stevearc/conform.nvim",
     event = { "BufReadPre", "BufNewFile" },
+    cmd = "ConformInfo",
 
     config = function()
         require("conform").setup({
@@ -21,9 +22,8 @@ return {
                 yaml = { "prettier" },
             },
             format_on_save = {
-                lsp_fallback = true,
-                async = false,
-                timeout_ms = 500,
+                lsp_format = "fallback",
+                timeout_ms = 1000,
             },
             formatters = {
                 stylua = {
