@@ -15,6 +15,13 @@ return {
         config = true,
     },
 
+    -- auto brackets, quotes, etc
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = true,
+    },
+
     -- kill bad habits :)
     {
         "m4xshen/hardtime.nvim",
