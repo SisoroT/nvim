@@ -24,11 +24,14 @@ return {
         }
 
         -- trigger linting on BufEnter, save, and insert leave
+        local typos_installed = is_linter_installed("typos")
+        local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
         vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+            group = lint_augroup,
             callback = function()
                 lint.try_lint()
 
-                if is_linter_installed("typos") then
+                if typos_installed then
                     lint.try_lint("typos")
                 end
             end,
