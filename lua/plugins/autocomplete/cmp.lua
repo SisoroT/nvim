@@ -1,73 +1,36 @@
--- autocomplete
 return {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-        -- icons for autocomplete
-        "onsails/lspkind-nvim",
-        -- snippets
-        {
-            "L3MON4D3/LuaSnip",
-            dependencies = { "rafamadriz/friendly-snippets" },
+    "saghen/blink.cmp",
+    event = { "InsertEnter", "CmdlineEnter" },
+    dependencies = { "rafamadriz/friendly-snippets" },
+    version = "1.*",
+
+    opts = {
+        keymap = {
+            ["<CR>"] = { "select_and_accept", "fallback" },
+            ["<Tab>"] = { "select_next", "fallback" },
+            ["<S-Tab>"] = { "select_prev", "fallback" },
+            ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+            ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+            ["<C-j>"] = { "snippet_forward", "fallback" },
+            ["<C-k>"] = { "snippet_backward", "fallback" },
         },
-        -- autocomplete sources
-        { "hrsh7th/cmp-nvim-lua" },
-        { "hrsh7th/cmp-nvim-lsp" },
-        { "hrsh7th/cmp-buffer" },
-        { "hrsh7th/cmp-path" },
-        { "hrsh7th/cmp-calc" },
-        { "saadparwaiz1/cmp_luasnip" },
+        sources = {
+            default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+            providers = {
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    score_offset = 100, -- show at a higher priority than lsp
+                },
+            },
+        },
+        completion = {
+            menu = { border = "rounded" },
+            documentation = {
+                auto_show = true,
+                auto_show_delay_ms = 200,
+                window = { border = "rounded" },
+            },
+        },
     },
-
-    config = function()
-        local cmp = require("cmp")
-        local lspkind = require("lspkind")
-        local ls = require("luasnip")
-
-        cmp.setup({
-            completion = {
-                completeopt = "menuone,noinsert",
-            },
-            snippet = {
-                expand = function(args)
-                    require("luasnip").lsp_expand(args.body)
-                end,
-            },
-            mapping = {
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<C-e>"] = cmp.mapping.close(),
-                ["<Tab>"] = cmp.mapping.select_next_item(),
-                ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                ["<CR>"] = cmp.mapping.confirm({
-                    select = true,
-                }),
-            },
-            formatting = {
-                format = lspkind.cmp_format({
-                    mode = "symbol", -- show only symbol annotations
-                }),
-            },
-            sources = {
-                { name = "luasnip" },
-                { name = "nvim_lsp" },
-                { name = "nvim_lua" },
-                { name = "buffer" },
-                { name = "path" },
-                { name = "calc" },
-            },
-        })
-
-        -- LuaSnip
-        require("luasnip.loaders.from_vscode").lazy_load()
-        -- jump forwards
-        vim.keymap.set({ "i", "s" }, "<C-j>", function()
-            ls.jump(1)
-        end)
-        -- jump backwards
-        vim.keymap.set({ "i", "s" }, "<C-k>", function()
-            ls.jump(-1)
-        end)
-    end,
 }

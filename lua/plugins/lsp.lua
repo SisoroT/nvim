@@ -27,10 +27,6 @@ return {
     },
 
     config = function()
-        -- needed for css autocomplete
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities.textDocument.completion.completionItem.snippetSupport = true
-
         local servers = {
             "bashls",
             "cssls",
@@ -48,9 +44,8 @@ return {
         })
 
         -- Apply capabilities to all servers
-        vim.lsp.config("*", {
-            capabilities = capabilities,
-        })
+        local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
+        vim.lsp.config("*", { capabilities = blink_capabilities })
         -- Enable all servers using native API
         vim.lsp.enable(servers)
 
