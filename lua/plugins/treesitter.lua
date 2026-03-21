@@ -1,7 +1,7 @@
 -- better syntax highlighting
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufReadPre",
+    lazy = false,
     build = ":TSUpdate",
     dependencies = {
         -- rainbow parens
@@ -26,6 +26,7 @@ return {
                 "javascript",
                 "json",
                 "lua",
+                "python",
                 "typescript",
                 "vim",
                 "vimdoc",
