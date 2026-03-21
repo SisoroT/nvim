@@ -2,6 +2,16 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         {
+            "folke/lazydev.nvim",
+            ft = "lua",
+            opts = {
+                library = {
+                    -- Load luvit types when the `vim.uv` word is found
+                    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                },
+            },
+        },
+        {
             "mason-org/mason.nvim",
             opts = {
                 ui = {
@@ -14,16 +24,6 @@ return {
             },
         },
         "mason-org/mason-lspconfig.nvim",
-        {
-            "folke/lazydev.nvim",
-            ft = "lua",
-            opts = {
-                library = {
-                    -- Load luvit types when the `vim.uv` word is found
-                    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-                },
-            },
-        },
     },
 
     config = function()
