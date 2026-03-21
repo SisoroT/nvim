@@ -61,7 +61,9 @@ map("n", "<C-s>", ":so%<CR>")
 
 -- built-in comments
 vim.keymap.set("n", "<C-/>", "gcc", { remap = true, silent = true })
+vim.keymap.set("n", "<C-_>", "gcc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-/>", "gc", { remap = true, silent = true })
+vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
 
 -- close a buffer
 map("n", "<leader>bd", ":bd<CR>")
