@@ -42,7 +42,6 @@ return {
         -- vim search
         { "<leader>vh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
         { "<leader>vk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
-        { "gr", "<cmd>Telescope lsp_references<cr>", desc = "LSP References" },
     },
 
     config = function()
