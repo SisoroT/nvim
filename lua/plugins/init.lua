@@ -41,9 +41,6 @@ return {
     -- blankline for tabs
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, event = "VeryLazy" },
 
-    -- visualize git conflicts
-    { "akinsho/git-conflict.nvim", event = "BufReadPost", config = true },
-
     -- sudo save
     {
         "lambdalisue/suda.vim",
