@@ -28,12 +28,6 @@ map("n", "<C-u>", "<C-u>zz")
 -- cursor doesn't move when joining lines
 map("n", "J", "mzJ`z")
 
--- navigate double windows with space+vim keys while in normal mode
-map("n", "<leader>h", "<C-w>h")
-map("n", "<leader>j", "<C-w>j")
-map("n", "<leader>k", "<C-w>k")
-map("n", "<leader>l", "<C-w>l")
-
 -- navigate double windows ctrl+vim keys
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-j>", "<C-w>j")
