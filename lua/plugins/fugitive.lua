@@ -1,27 +1,27 @@
 -- manage git from vim
 return {
     "tpope/vim-fugitive",
-    event = "BufWinEnter",
-    config = function()
-        local function showFugitiveGit()
-            if vim.fn.FugitiveHead() ~= "" then
-                vim.cmd([[
-                Git
-                resize 20
-                ]])
-            end
-        end
-
-        local function toggleFugitiveGit()
-            if vim.fn.buflisted(vim.fn.bufname("fugitive:///*/.git//$")) ~= 0 then
-                vim.cmd([[ execute ':bdelete' bufname('fugitive:///*/.git//$') ]])
-            else
-                showFugitiveGit()
-            end
-        end
-
-        vim.keymap.set("n", "<leader>gg", toggleFugitiveGit)
-        vim.keymap.set("n", "<leader>gp", ":Git push<cr>")
-        vim.keymap.set("n", "<leader>gc", ':Git commit -m ""<Left>')
-    end,
+    cmd = "Git",
+    keys = {
+        {
+            "<leader>gg",
+            function()
+                -- delete the fugitive buffer if it exists
+                for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+                    if vim.bo[buf].filetype == "fugitive" then
+                        vim.api.nvim_buf_delete(buf, { force = false })
+                        return
+                    end
+                end
+                -- otherwise, open the fugitive buffer
+                if vim.fn.FugitiveHead() ~= "" then
+                    vim.cmd("Git | resize 20")
+                end
+            end,
+            desc = "Toggle Git Status",
+        },
+        { "<leader>gp", "<cmd>Git push<cr>", desc = "Git Push" },
+        { "<leader>gl", "<cmd>Git pull<cr>", desc = "Git Pull" },
+        { "<leader>gc", "<cmd>Git commit<cr>", desc = "Git Commit" },
+    },
 }
