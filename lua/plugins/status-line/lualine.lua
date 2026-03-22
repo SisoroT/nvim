@@ -36,6 +36,7 @@ return {
                 -- Disable sections and component separators
                 component_separators = "",
                 section_separators = "",
+                globalstatus = true,
             },
             sections = {
                 -- these are to remove the defaults
