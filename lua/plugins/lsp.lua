@@ -34,8 +34,10 @@ return {
             "jsonls",
             "lua_ls",
             "pyright",
+            "taplo",
             "ts_ls",
             "vimls",
+            "yamlls",
         }
 
         -- Ensure servers are installed
