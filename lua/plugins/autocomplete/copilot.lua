@@ -1,6 +1,8 @@
 return {
     "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
     event = "InsertEnter",
+
     dependencies = {
         "copilotlsp-nvim/copilot-lsp",
     },
@@ -9,17 +11,16 @@ return {
         suggestion = {
             auto_trigger = true,
             keymap = {
-                accept = "<M-a>",
-                next = "<M-l>",
-                prev = "<M-h>",
-                dismiss = "<M-d>",
+                accept = "<M-n>",
+                prev = "<M-e>",
+                next = "<M-i>",
+                dismiss = "<M-o>",
             },
         },
         nes = {
             enabled = true,
             keymap = {
-                accept_and_goto = "<leader>p",
-                accept = false,
+                accept_and_goto = "<M-h>",
                 dismiss = "<Esc>",
             },
         },
