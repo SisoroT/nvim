@@ -65,6 +65,20 @@ return {
                 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
                 vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, opts)
                 vim.keymap.set("n", "H", vim.diagnostic.open_float, opts)
+                local diag_win = nil
+                vim.keymap.set("n", "K", function()
+                    local line = vim.fn.line(".")
+                    local has_diag = #vim.diagnostic.get(0, { lnum = line - 1 }) > 0
+                    local diag_open = diag_win and vim.api.nvim_win_is_valid(diag_win)
+
+                    if has_diag and not diag_open then
+                        local _, win = vim.diagnostic.open_float()
+                        diag_win = win
+                    else
+                        vim.lsp.buf.hover()
+                        diag_win = nil
+                    end
+                end, opts)
 
                 -- cd to root on attach
                 local client = vim.lsp.get_client_by_id(ev.data.client_id)
