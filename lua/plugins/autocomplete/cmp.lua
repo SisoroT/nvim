@@ -5,13 +5,9 @@ return {
 
     opts = {
         keymap = {
-            ["<CR>"] = { "select_and_accept", "fallback" },
-            ["<Tab>"] = { "select_next", "fallback" },
-            ["<S-Tab>"] = { "select_prev", "fallback" },
+            preset = "super-tab",
             ["<C-d>"] = { "scroll_documentation_down", "fallback" },
             ["<C-u>"] = { "scroll_documentation_up", "fallback" },
-            ["<C-j>"] = { "snippet_forward", "fallback" },
-            ["<C-k>"] = { "snippet_backward", "fallback" },
         },
         sources = {
             default = { "lazydev", "lsp", "path", "snippets", "buffer" },
