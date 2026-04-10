@@ -8,8 +8,8 @@ g.mapleader = " "
 g.maplocalleader = " "
 
 -- open terminal in split window
-map("n", "<leader>ov", ":vsplit | term<CR>")
-map("n", "<leader>oh", ":split | resize 13 | term<CR>")
+map("n", "<leader>ov", "<cmd>vsplit | term<cr>")
+map("n", "<leader>oh", "<cmd>split | resize 13 | term<cr>")
 
 -- open netrw
 map("n", "-", vim.cmd.Ex)
@@ -38,20 +38,20 @@ map("n", "<C-l>", "<C-w>l")
 map({ "i", "v" }, "ii", "<Esc>")
 
 -- clear highlighted search results
-map("n", "<leader>n", ":noh<CR>")
+map("n", "<leader>n", "<cmd>noh<cr>")
 
 -- move to the next/previous buffer
-map("n", "<Tab>", ":bnext<CR>")
-map("n", "<S-Tab>", ":bprevious<CR>")
+map("n", "<Tab>", "<cmd>bnext<cr>")
+map("n", "<S-Tab>", "<cmd>bprevious<cr>")
 
 -- resize with ctrl+arrows
-map("n", "<C-Left>", ":vertical resize -2<CR>")
-map("n", "<C-Down>", ":resize -2<CR>")
-map("n", "<C-Up>", ":resize +2<CR>")
-map("n", "<C-Right>", ":vertical resize +2<CR>")
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>")
+map("n", "<C-Down>", "<cmd>resize -2<cr>")
+map("n", "<C-Up>", "<cmd>resize +2<cr>")
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>")
 
 -- source shortcut
-map("n", "<C-s>", ":so%<CR>")
+map("n", "<C-s>", "<cmd>so%<cr>")
 
 -- built-in comments
 vim.keymap.set("n", "<C-/>", "gcc", { remap = true, silent = true })
@@ -60,7 +60,7 @@ vim.keymap.set("v", "<C-/>", "gc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
 
 -- close a buffer
-map("n", "<leader>bd", ":bd<CR>")
+map("n", "<leader>bd", "<cmd>bd<cr>")
 
 -- keybind to use find and replace
 map("n", "<leader>s", ":%s//gI<Left><Left><Left>")
