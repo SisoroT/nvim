@@ -64,7 +64,6 @@ return {
                 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
                 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
                 vim.keymap.set("n", "<leader>k", vim.lsp.buf.signature_help, opts)
-                vim.keymap.set("n", "H", vim.diagnostic.open_float, opts)
                 local diag_win = nil
                 vim.keymap.set("n", "K", function()
                     local line = vim.fn.line(".")
