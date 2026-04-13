@@ -60,7 +60,7 @@ vim.keymap.set("v", "<C-/>", "gc", { remap = true, silent = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, silent = true })
 
 -- close a buffer
-map("n", "<leader>bd", "<cmd>bd<cr>")
+map("n", "<leader>x", "<cmd>bd<cr>")
 
 -- keybind to use find and replace
 map("n", "<leader>s", ":%s//gI<Left><Left><Left>")
