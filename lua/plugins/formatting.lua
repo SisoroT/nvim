@@ -28,9 +28,6 @@ return {
             stylua = {
                 prepend_args = { "--indent-type", "Spaces" },
             },
-            prettier = {
-                prepend_args = { "--tab-width", "4", "--no-semi", "--single-quote", "--jsx-single-quote" },
-            },
         },
     },
 }
