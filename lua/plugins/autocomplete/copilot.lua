@@ -33,7 +33,7 @@ return {
         },
         opts = {
             interactions = {
-                chat = { adapter = { name = "copilot", model = "gpt-5.3-codex" } },
+                chat = { adapter = { name = "copilot", model = "claude-sonnet-4.6" } },
                 inline = { adapter = { name = "copilot", model = "gpt-5.4-mini" } },
                 cmd = { adapter = "copilot" },
             },
