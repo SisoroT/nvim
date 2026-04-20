@@ -79,3 +79,6 @@ o.clipboard = "unnamedplus"
 o.backup = false
 o.writebackup = false
 o.swapfile = false
+
+-- Set Python 3 host program for plugins that use Python (e.g. jupyter support)
+vim.g.python3_host_prog = vim.fn.expand("~/.local/share/nvim-venv/bin/python")
