@@ -24,18 +24,25 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
             "zbirenbaum/copilot.lua",
+            "ravitemer/codecompanion-history.nvim",
         },
         keys = {
             { "<leader>aa", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "Actions palette" },
             { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Toggle chat" },
             { "<leader>ai", "<cmd>CodeCompanion<cr>", mode = { "n", "v" }, desc = "Inline assistant" },
             { "<leader>aA", "<cmd>CodeCompanionChat Add<cr>", mode = "v", desc = "Add selection to chat" },
+            { "<leader>ah", "<cmd>CodeCompanionHistory<cr>", desc = "Chat history" },
         },
         opts = {
             interactions = {
                 chat = { adapter = { name = "copilot", model = "claude-sonnet-4.6" } },
                 inline = { adapter = { name = "copilot", model = "gpt-5.4-mini" } },
                 cmd = { adapter = "copilot" },
+            },
+            extensions = {
+                history = {
+                    enabled = true,
+                },
             },
         },
     },
